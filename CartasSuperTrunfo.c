@@ -12,24 +12,25 @@ int main(){
         float populationDensity;
         float pibPerCapta;
     };
-    struct CartasSuperTrunfo Cards[2];
+    struct CartasSuperTrunfo Cards[10];
 
-//Data input to register each card.
+//Determining how much cards will be registered.
     int i;
-    for (i=0; i<2; i++){
+    int maxCards;
+    printf("Quantas cartas deseja registrar? (Maximo de 10 Cartas)\n");
+    scanf("%d", &maxCards);
+
+//Data input to register each card.   
+    for (i=0; i<maxCards; i++){
         int numeroCarta = i+1;
         printf("\nDigite o codigo da carta %d: (Exemplo:A03)\n", numeroCarta);
         scanf("%s", &Cards[i].cardCode);
-
         printf("\nDigite a populacao:\n");
         scanf("%d", &Cards[i].population);
-
         printf("\nDigite a área da cidade em Km quadrados:\n");
         scanf("%d", &Cards[i].area);
-
         printf("\nDigite o PIB da cidade:\n");
         scanf("%d", &Cards[i].PIB);
-
         printf("\nDigite o numero de atracoes turisticas da Cidade:\n");
         scanf("%d", &Cards[i].touristAttractions);
         
@@ -37,7 +38,7 @@ int main(){
         Cards[i].pibPerCapta = Cards[i].PIB/Cards[i].population; //Calculating PIB per capta (sei lá como diabos escreve isso em inglês)
     };
 //Outputing the values of each card.
-    for (i=0; i<2; i++){
+    for (i=0; i<maxCards; i++){
         printf("\n\nCarta %s\n", Cards[i].cardCode);
         printf("Populacao de %d habitantes.\n", Cards[i].population);
         printf("Area de %d Km quadrados.\n", Cards[i].area);
