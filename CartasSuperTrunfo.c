@@ -14,17 +14,6 @@ struct CartasSuperTrunfo
 struct CartasSuperTrunfo Cards[9];
 int maxCards = 0; //Stores the ammount of cards created.
 
-//Card inspection.
-void cardInspection(int cartaEscolhida){
-    printf("\n\nCarta %s\n", Cards[cartaEscolhida-1].cardCode);
-    printf("Populacao de %d habitantes.\n", Cards[cartaEscolhida-1].population);
-    printf("Area de %d Km quadrados.\n", Cards[cartaEscolhida-1].area);
-    printf("PIB de %d Reais.\n", Cards[cartaEscolhida-1].PIB);
-    printf("Atracoes turisticas: %d.\n", Cards[cartaEscolhida-1].touristAttractions);
-    printf("Densidade populacional de %.2f por Km quadrado.\n", Cards[cartaEscolhida-1].populationDensity);
-    printf("PIB per capta de %.2f Reais por habitante.\n\n\n\n", Cards[cartaEscolhida-1].PIBPerCapta);
-}
-
 //Comparison of each individual value of two cards.
 void cardsComparison(int carta1, int carta2){
     carta1--;
@@ -108,4 +97,3 @@ void initialMenu() {
 int main(){
     while(1>0){initialMenu();};
 };
-
